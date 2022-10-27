@@ -1,0 +1,26 @@
+name: CaraMoule - display your OS Version
+
+on:
+  workflow_dispatch:
+    
+jobs:
+  Linul:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: buntu
+        run: lsb_release
+
+  Windobe:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: win
+        run: Get-ComputerInfo
+
+  MacDo:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: mac
+        run: sw_vers
