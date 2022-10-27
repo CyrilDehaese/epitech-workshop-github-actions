@@ -1,0 +1,25 @@
+name: Configure your workflow
+
+on:
+  issues:
+    types:
+      - opened
+      - closed
+      - edited
+  pull_request:
+    types:
+      - ready_for_review
+  gollum:
+  schedule:
+    - cron: '5 * * * *'
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: hello World Date
+        run: |
+          echo -n "Hello, world! Today is "
+          date
